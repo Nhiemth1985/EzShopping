@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+        <div class="container-fluid">
+        <a class="navbar-brand" href="/" style="text-align: center;">Easy <br> Shopping</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{url_for('login')}}">Log In</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/Sing_Up">Sing Up</a>
+            </li>
+            
+            </ul>
+        </div>
+        </div>
+    </nav>
+		<div class="login">
+			<h1>Login</h1>
+			<div class="links">
+				
+				
+			</div>
+			<form action="{{ url_for('login') }}" method="post">
+				<label for="username">
+					<i class="fas fa-user"></i>
+				</label>
+				<input type="text" name="user_name_l" placeholder="Username" id="username" required>
+				<label for="password">
+					<i class="fas fa-lock"></i>
+				</label>
+				<input type="password" name="password_l" placeholder="Password" id="password" required>
+				<div class="msg">{{ msg }}</div>
+                <p style = "text-align: center;"><a href="/Sing_Up">If you do not have ant account please create account by clicking here</a></p>
+				<input type="submit" value="Login">
+			</form>
+		</div>
+{% endblock %}
